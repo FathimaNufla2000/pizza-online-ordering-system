@@ -6,6 +6,8 @@ const helmet = require('helmet');
 const compression = require('compression');
 
 require('./db/db'); // ensures tables exist
+const { seedIfEmpty } = require('./db/seed');
+seedIfEmpty(); // auto-populate menu data if the database is empty
 
 const app = express();
 const PORT = process.env.PORT || 3000;

@@ -23,5 +23,24 @@ const insertMany = db.transaction((rows) => {
   for (const row of rows) insert.run({ ...row, slug: slugify(row.name) });
 });
 
-insertMany(pizzas);
-console.log(`Seeded ${pizzas.length} pizzas.`);
+function seedPizzas() {
+  insertMany(pizzas);
+  console.log(`Seeded ${pizzas.length} pizzas.`);
+}
+
+// Auto-seed if the pizzas table is empty (e.g. a fresh deploy with an empty database).
+// This means you never need to manually run the seed script against production.
+function seedIfEmpty() {
+  const { count } = db.prepare('SELECT COUNT(*) AS count FROM pizzas').get();
+  if (count === 0) {
+    console.log('Pizzas table is empty — auto-seeding menu data...');
+    seedPizzas();
+  }
+}
+
+// Only run immediately (unconditionally) if this file is executed directly via `node db/seed.js`
+if (require.main === module) {
+  seedPizzas();
+}
+
+module.exports = { seedPizzas, seedIfEmpty };
