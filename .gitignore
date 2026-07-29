@@ -1,0 +1,6 @@
+node_modules/
+.env
+db/pizza.db
+db/pizza.db-shm
+db/pizza.db-wal
+npm-debug.log

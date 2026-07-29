@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <section class="section">
+    <h1 class="section-title">Our Menu</h1>
+
+    <% Object.keys(grouped).forEach(function(category) { %>
+      <h2 class="category-title"><%= category %></h2>
+      <div class="pizza-grid">
+        <% grouped[category].forEach(function(pizza) { %>
+          <article class="pizza-card" data-id="<%= pizza.id %>">
+            <img src="/images/<%= pizza.image %>" alt="<%= pizza.name %> pizza" loading="lazy" width="300" height="300">
+            <div class="pizza-info">
+              <h3><%= pizza.name %></h3>
+              <p class="pizza-desc"><%= pizza.description %></p>
+              <p class="pizza-price">Rs. <%= pizza.price.toLocaleString('en-LK') %></p>
+              <button
+                class="btn btn-primary add-to-cart"
+                data-id="<%= pizza.id %>"
+                data-name="<%= pizza.name %>"
+                data-price="<%= pizza.price %>"
+                data-image="<%= pizza.image %>">
+                Add to Cart
+              </button>
+            </div>
+          </article>
+        <% }) %>
+      </div>
+    <% }) %>
+  </section>
+
+  <%- include('partials/footer') %>
+  <script src="/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <img src="/images/BG.jpg" alt="Freshly baked deep-dish pizza" class="hero-bg" loading="eager">
+    <div class="hero-content">
+      <h1 class="anim-fade-up delay-1">Slices of Heaven</h1>
+      <p class="anim-fade-up delay-2">Authentic deep-dish pizza, baked fresh, delivered fast across Sri Lanka.</p>
+      <a href="/menu" class="btn btn-primary anim-fade-up delay-3">Order Now</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Why You'll Love Us</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Original Recipes</h3>
+        <p>A deep-dish recipe passed down through generations, baked fresh daily.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Fast Delivery</h3>
+        <p>Hot pizza at your door across Colombo, Kandy and Kurunegala.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Real Ingredients</h3>
+        <p>Quality chicken, veggies and cheese sourced fresh, every day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <h2 class="section-title">Popular Picks</h2>
+    <div class="promo-grid">
+      <div class="promo-item">
+        <img src="/images/pizza4.jpg" alt="Chicken Sausage Meat with Nai Miris pizza" loading="lazy">
+      </div>
+      <div class="promo-item">
+        <img src="/images/pizza3.jpg" alt="Super Supreme pizza" loading="lazy">
+      </div>
+      <div class="promo-item">
+        <img src="/images/pizza9.jpg" alt="Spicy Seafood pizza" loading="lazy">
+      </div>
+    </div>
+    <div class="center-btn">
+      <a href="/menu" class="btn btn-outline">See Full Menu</a>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

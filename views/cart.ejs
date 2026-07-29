@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <section class="section">
+    <h1 class="section-title">Your Cart</h1>
+
+    <div id="cartEmpty" class="empty-state" hidden>
+      <p>Your cart is empty.</p>
+      <a href="/menu" class="btn btn-primary">Browse the Menu</a>
+    </div>
+
+    <div id="cartContent" hidden>
+      <div class="cart-card">
+        <table class="cart-table">
+          <thead>
+            <tr><th>Pizza</th><th>Price</th><th>Qty</th><th>Subtotal</th><th></th></tr>
+          </thead>
+          <tbody id="cartItems"></tbody>
+        </table>
+      </div>
+      <p class="cart-total">Total: Rs. <span id="cartTotal">0</span></p>
+
+      <form id="checkoutForm" class="checkout-form">
+        <h2>Delivery Details</h2>
+        <label for="customer_name">Full Name</label>
+        <input type="text" id="customer_name" name="customer_name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="address">Delivery Address</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <button type="submit" class="btn btn-primary">Place Order</button>
+        <p id="checkoutError" class="form-error" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <script src="/js/menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', renderCartPage);
+  </script>
+</body>
+</html>
