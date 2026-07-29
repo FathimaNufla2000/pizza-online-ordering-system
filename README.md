@@ -4,6 +4,7 @@ A full-stack web application for ordering pizza online. The system lets customer
 
 🔗 **Repository:** [github.com/FathimaNufla2000/pizza-online-ordering-system](https://github.com/FathimaNufla2000/pizza-online-ordering-system)
 
+🌐 **Live Demo:** [pizza-online-ordering-system-production.up.railway.app](https://pizza-online-ordering-system-production.up.railway.app/)
 ---
 
 ## 📌 Project Overview
